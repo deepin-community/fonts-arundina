@@ -1,5 +1,325 @@
-template-repository (1.0-1) unstable; urgency=medium
+fonts-arundina (0.3.2-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 0.3.2
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 12 Feb 2020 16:32:23 +0700
+
+fonts-arundina (0.3.1-1) unstable; urgency=medium
+
+  * New upstream version 0.3.1
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 29 Jan 2020 15:19:42 +0700
+
+fonts-arundina (0.3.0-1) experimental; urgency=medium
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Set upstream metadata fields: Bug-Submit (from ./configure).
+
+  [ Theppitak Karoonboonyanan ]
+  * Add upstream Repository metadata fields
+  * New upstream version 0.3.0
+  * d/watch: Update location & package name
+  * Rename package to 'fonts-arundina'
+    + d/control:
+      - Rename source package to 'fonts-arundina'
+      - Rename binary package 'fonts-sipa-arundina' to 'fonts-arundina'
+      - Add transitional package 'fonts-sipa-arundina'
+    + d/fonts-sipa-arundina.{docs,install,links,maintscript}:
+      - Rename all corresponding files to 'fonts-arundina.*'
+  * d/control: Add autoconf-archive, python3-fontforge B-Deps
+  * Install fontconfig files from /usr/share, not /etc, as per upstream
+  * Rename LaTeX package.
+    + d/control:
+      - Rename binary package 'latex-fonts-sipa-arundina'
+        to 'latex-fonts-arundina'.
+      - Add transitional package 'latex-fonts-sipa-arundina'.
+    + d/latex-fonts-sipa-arundina.{docs,examples,install,links,maps}:
+      - Rename corresponding files.
+    + d/latex-fonts-arundina.examples:
+      - Update examples directory.
+    + d/latex-fonts-arundina.links:
+      - Update doc directory.
+  * d/fonts-arundina.links: Update fontconfig file name.
+  * d/upstream/metadata: Update Bug-Submit, add Bug-Database.
+  * d/gbp.conf: Remove the 'buildpackage' section.
+    This should be for per-user options.
+  * d/control: Add "Rules-Requires-Root: no"
+  * Update d/copyright
+    - Update Upsteam-Name & Source.
+    - Update years for upstream & packaging.
+  * Declare compliance with Debian Policy 4.5.0.
+    Now that the package builds reproducibly, we can bump Standards-Version
+    to 4.1.0 and beyond. All compliances have been checked.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Thu, 23 Jan 2020 17:56:12 +0700
+
+fonts-sipa-arundina (0.2.2-3) unstable; urgency=medium
+
+  * d/copyright: Add slash to the end for Format URL
+  * d/changelog: Remove trailing whitespaces
+  * Switch to dh level 12
+    - d/control: B-Dep on debhelper-compat (= 12) instead of debhelper
+    - d/compat: Removed
+  * d/gbp.conf: Added, following DEP-14
+  * d/gbp.conf: Use --source-only-changes by default
+  * d/copyright: Update years on packaging
+  * d/control: Drop version on tex-common B-Dep
+    Already satisfied even in oldoldstable
+  * d/watch: Update to version 4
+  * Drop version on texlive-lang-other dependency.
+    Already satisfied even in oldoldstable.
+  * d/copyright: Use HTTPS in Format URL
+  * Drop obsolete maintscript for latex-fonts-sipa-arundina
+  * d/copyright: Update LaTeX copyright info as per upstream
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Tue, 22 Oct 2019 14:57:36 +0700
+
+fonts-sipa-arundina (0.2.2-2) unstable; urgency=medium
+
+  * Update Vcs fields for migration to salsa.debian.org
+  * Bump dephelper compat level to 11
+  * d/copyright: Update years
+  * d/control: Use HTTPS in Homepage field
+  * Move fontconfig template from /etc/fonts/ to /usr/share/fontconfig/
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Mon, 12 Mar 2018 17:52:33 +0700
+
+fonts-sipa-arundina (0.2.2-1) unstable; urgency=medium
+
+  * New upstream version 0.2.2
+  * Bump Standards-Version to 4.0.1 (no changes)
+  * Use HTTPS in watch file [lintian]
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Thu, 19 Oct 2017 15:17:22 +0700
+
+fonts-sipa-arundina (0.2.1-3) unstable; urgency=medium
+
+  * Fix watch file pattern.
+    - Do not append tarball extension when determining upstream version
+      and cause false positive of newer upstream.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 26 Jul 2017 19:02:46 +0700
+
+fonts-sipa-arundina (0.2.1-2) unstable; urgency=medium
+
+  * Watch upstream xz tarball (Closes: #869401)
+    Thanks Neutron Sountmun for the patch.
+  * Bump Standards-Version to 4.0.0 (no changes needed)
+  * Bump debhelper compat to 10.
+    Also disable parallel build in rules
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Tue, 25 Jul 2017 11:05:12 +0700
+
+fonts-sipa-arundina (0.2.1-1) unstable; urgency=medium
+
+  * d/copyright: Add required text for GPL-2. Update year.
+  * Bump Standards-Version to 3.9.6 (no changes needed)
+  * Drop obsolete ttf-thai-arundina transitional package.
+  * Drop explicit rules for xz compression
+    dpkg-dev (>= 1.17.0) already does this by default.
+  * Imported Upstream version 0.2.1
+  * Ship fontconfig files from upstream.
+  * Update copyright info
+    - Update upstream contact.
+    - Add upstream copyright info for packaging & build system.
+    - Split GPL-2+ text to a shared stand-alone section.
+    - Update copyright years for debian packaging.
+  * Use HTTPS in Vcs-* fields, cgit for Vcs-Browser.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Mon, 08 Feb 2016 16:01:27 +0700
+
+fonts-sipa-arundina (0.2.0-7) unstable; urgency=low
+
+  [ Christian Perrier ]
+  * Use git for packaging: adapt Vcs-* fields
+
+  [ Theppitak Karoonboonyanan ]
+  * Replace dependency on thailatex with texlive-lang-other.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Fri, 24 May 2013 13:43:36 +0700
+
+fonts-sipa-arundina (0.2.0-6) unstable; urgency=low
+
+  * Update LaTeX documentation location.
+    - Install texmf doc links under /usr/share/texmf/doc instead of
+      /usr/share/doc/texmf, according to tex-common 4.0 change.
+    - B-Dp on tex-common (>= 4.01), for proper misc-Depends generation.
+  * debian/copyright: Update years.
+  * Declare Multi-Arch: foreign for all font packages.
+  * Bump Standards-Version to 3.9.4 (no changes needed)
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Thu, 09 May 2013 14:49:05 +0700
+
+fonts-sipa-arundina (0.2.0-5) unstable; urgency=low
+
+  * Build with xz compression.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 08 Aug 2012 08:32:41 +0700
+
+fonts-sipa-arundina (0.2.0-4) unstable; urgency=medium
+
+  * Urgency medium due to RC bug fix.
+  * Add texlive-base B-Dep, so that afm2tfm in newer texlive-binaries can
+    find files in current dir, fixing FTBFS. (Closes: #666615)
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Fri, 20 Apr 2012 17:32:51 +0700
+
+fonts-sipa-arundina (0.2.0-3) unstable; urgency=low
+
+  * Bump Standards-Version to 3.9.3 with following changes:
+    - Update debian/copyright Format: URL to 'packaging-manuals' one.
+  * B-Dep debhelper >= 8.1.0, for dpkg-maintscript-helper support. [lintian]
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Sat, 24 Mar 2012 15:58:56 +0700
+
+fonts-sipa-arundina (0.2.0-2) experimental; urgency=low
+
+  * Move to tex-common v3. Patch adjusted from Norbert Preining's for another
+    package. Thanks.
+    - rebuild with tex-common v3
+    - remove obsolete conffile (debian/latex-fonts-sipa-arundina.maintscript)
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Tue, 20 Mar 2012 15:54:14 +0700
+
+fonts-sipa-arundina (0.2.0-1) unstable; urgency=low
+
+  * Packaging moved to alioth, update Vcs-* accordingly.
+  * Apply wrap-and-sort.
+  * Set transitional package Priority to extra. [lintian.d.o]
+  * New upstream release
+    - Drop Build-Dep on thailatex.
+    - Update Homepage field.
+    - Update upstream name & source URL in copyright.
+    - Update copyright years.
+    - Update watch file to track 'fonts-sipa-arundina' tarballs.
+    - Update dir for LaTeX examples.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 15 Feb 2012 13:01:56 +0700
+
+fonts-sipa-arundina (0.1.3-1) unstable; urgency=low
+
+  * New upstream release
+    - With LaTeX support.
+  * Rename source and binary package to fonts-sipa-arundina, according to
+    the Debian Fonts Task Force Packaging Policy.
+    - Change installation dir to /usr/share/fonts/truetype/arundina
+    - Breaks and Replaces ttf-thai-arundina (<< 0.1.3)
+    - Make ttf-thai-arundina a dummy transitional package depending on
+      fonts-sipa-arundina.
+    - Rename fontconfig file to 65-sipa-arundina.conf
+    - Clean old fontconfig file on ttf-thai-arundina preinst.
+  * debian/ttf-thai-arundina.preinst:
+    - Use 'lt-nl' when comparing version before purging defoma hints,
+      to avoid exsessive operation on fresh install.
+  * Drop rarely-used t1-thai-arundina sub-package.
+  * Add latex-fonts-sipa-arundina sub-package.
+    - Use --enable-latex configure option.
+    - B-Dep-Indep on thailatex (>= 0.4.6), texlive-binaries and tex-common.
+    - Install font map via 'dh --with tex'.
+    - Override dh_installtex to add -p option so that only latex package is
+      applied (no tex-common postinst & deps for others).
+    - Depends on thailatex (>= 0.4.6).
+    - debian/copyright: Add copyright notice for latex/*.
+    - Install LaTeX examples.
+    - Make symlink from README for texdoc.
+  * Add 'fontforge' as an alternative B-Dep, in addition to 'fontforge-nox'.
+  * debian/copyright: Use non-forwarding format URL. Bump to revision 202.
+  * Bump Standards-Version to 3.9.2 (no changes needed)
+  * Bump debhelper compatibility to 8.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Tue, 01 Nov 2011 18:54:04 +0700
+
+thaifonts-arundina (0.1.2-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/copyright: Updated to DEP-5 rev 173.
+  * debian/rules: Add empty binary-arch target.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Fri, 25 Mar 2011 15:57:44 +0700
+
+thaifonts-arundina (0.1.1-5) unstable; urgency=low
+
+  * Replace fontforge B-Dep with fontforge-nox to reduce load on buildd.
+  * Remove versioned Dep on ancient xfonts-utils.
+  * debian/copyright:
+    - Updated to DEP-5 rev 166.
+    - Update copyright year for debian/*.
+  * debian/rules: Switch to dh 7 rules.
+  * B-Dep on debhelper (>= 7.0.50~) for override_dh_ targets support.
+  * Bump Standards-Version to 3.9.1 (no changes needed)
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Fri, 11 Mar 2011 10:22:23 +0700
+
+thaifonts-arundina (0.1.1-4) unstable; urgency=low
+
+  * Drop defoma support, according to
+    http://wiki.debian.org/OldPkgRemovals#defoma :
+    - debian/control: Drop Build-Depends on defoma, and Depends on on defoma,
+      x-ttcidfont-conf
+    - debian/rules: Drop dh_installdefoma call
+    - debian/{t1,ttf}-thai-arundina.defoma-hints: Removed
+    - debian/{t1,ttf}-thai-arundina.preinst: Added to remove obsolete defoma
+      hints files
+  * Switch to "3.0 (quilt)" source format.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Thu, 03 Dec 2009 15:47:37 +0700
+
+thaifonts-arundina (0.1.1-3) unstable; urgency=low
+
+  * debian/control:
+    - Update my e-mail address to @debian.org.
+    - Drop DM-Upload-Allowed.
+  * debian/copyright:
+    - Update my e-mail address for debian/* to @debian.org.
+  * debian/ttf-thai-arundina.defoma-hints:
+    - Fix font locations in defoma hints. Thanks Jakob Bohm for the report and
+      patch. (Closes: #551527)
+  * Bump Standards-Version to 3.8.3 (no changes needed)
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Thu, 29 Oct 2009 13:35:44 +0700
+
+thaifonts-arundina (0.1.1-2) unstable; urgency=low
+
+  * debian/watch: Fix watch pattern so that only *.tar.gz is matched, not
+    *.tar.gz.md5sum.
+  * VCS moved from CVS to SVN; update Vcs-* fields accordingly.
+  * Section moved from 'x11' to 'fonts'.
+  * Update 'debian/copyright' format to proposal rev 454
+    - Add header section
+    - Use one Copyright statement per field
+    - Replace GPL-2 license content with 'On Debian systems, ...'
+  * Update copyright year for 'Files: debian/*'.
+  * Bump debhelper compat to level 7
+    - Bump debian/compat to 7
+    - Build-dep on debhelper (>= 7)
+    - debian/rules:
+      + Replace obsoleted 'dh_clean -k' with 'dh_prep'
+      + Remove *-stamp clean-ups in clean target, as dh_clean now does it
+  * Add '${misc:Depends}' to fix lintian warnings.
+  * Add DM-Upload-Allowed.
+  * Bump Standards-Version to 3.8.1 (no changes needed)
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Fri, 27 Mar 2009 16:40:35 +0700
+
+thaifonts-arundina (0.1.1-1) unstable; urgency=low
+
+  * Initial upload to Debian. (Closes: #456885)
+  * New upstream release
+    - Scale up to match Latin height with normal western fonts
+    - Adjust Thai glyph relative size to English
+    - Adjust hinting
+  * debian/rules: Do not ignore 'make distclean' error.
+  * debian/copyright: Rewrite in machine-interpretable format. Update download
+    location.
+  * debian/watch: Added.
+  * Add Vcs-Cvs, Vcs-Browser and Homepage fields.
+  * Bump standards version to 3.7.3.0, no change needed.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Wed, 19 Dec 2007 10:56:50 +0700
+
+thaifonts-arundina (0.1.0-0thep1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Mon, 19 Feb 2007 16:42:15 +0700

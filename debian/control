@@ -1,15 +1,63 @@
-Source: template-repository
-Section: unknown
+Source: fonts-arundina
+Section: fonts
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Theppitak Karoonboonyanan <thep@debian.org>
+Build-Depends: debhelper-compat (= 12)
+Build-Depends-Indep:
+ autoconf-archive,
+ fontforge-nox | fontforge,
+ python3-fontforge,
+ tex-common,
+ texlive-base,
+ texlive-binaries
+Rules-Requires-Root: no
+Vcs-Git: https://salsa.debian.org/fonts-team/fonts-sipa-arundina.git
+Vcs-Browser: https://salsa.debian.org/fonts-team/fonts-sipa-arundina
+Homepage: https://linux.thai.net/projects/fonts-sipa-arundina
+Standards-Version: 4.5.0
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: fonts-arundina
+Architecture: all
+Multi-Arch: foreign
+Breaks: fonts-sipa-arundina (<< 0.3.0-1~)
+Replaces: fonts-sipa-arundina (<< 0.3.0-1~)
+Depends: ${misc:Depends}
+Description: Thai DejaVu-compatible fonts
+ Arundina fonts for Thai script.
+ .
+ The fonts are designed to be compatible with Bitstream Vera or DejaVu fonts.
+ Serif, sans-serif and monospace type faces are included.
+
+Package: fonts-sipa-arundina
+Architecture: all
+Multi-Arch: foreign
+Priority: optional
+Section: oldlibs
+Depends:
+ fonts-arundina,
+ ${misc:Depends}
+Description: transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: latex-fonts-arundina
+Architecture: all
+Multi-Arch: foreign
+Breaks: latex-fonts-sipa-arundina (<< 0.3.0-1~)
+Replaces: latex-fonts-sipa-arundina (<< 0.3.0-1~)
+Depends: texlive-lang-other, ${misc:Depends}
+Description: Thai DejaVu-compatible fonts for LaTeX
+ Arundina fonts for typesetting Thai documents with TeX/LaTeX.
+ .
+ The fonts are designed to be compatible with Bitstream Vera or DejaVu fonts.
+ Serif, sans-serif and monospace type faces are included.
+
+Package: latex-fonts-sipa-arundina
+Architecture: all
+Multi-Arch: foreign
+Priority: optional
+Section: oldlibs
+Depends:
+ latex-fonts-arundina,
+ ${misc:Depends}
+Description: transitional package
+ This is a transitional package. It can safely be removed.
